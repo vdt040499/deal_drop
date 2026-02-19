@@ -1,8 +1,8 @@
-# Deal Drop - Intelligent Price Tracking
+# Price Drop - Intelligent Price Tracking
 
-**Deal Drop** is a premium, high-performance price tracking application designed for the strategic shopper. It monitors product prices across major e-commerce platforms in real-time and delivers instant email alerts when prices drop, ensuring you never miss a deal ("asset") again.
+**Price Drop** is a premium, high-performance price tracking application designed for the strategic shopper. It monitors product prices across major e-commerce platforms in real-time and delivers instant email alerts when prices drop, ensuring you never miss a deal ("asset") again.
 
-![Price Drop Alert Email Template](public/alert_mail_template.png)
+![Price Drop Alert Email Template](public/price-drop-logo.png)
 
 ## Core Features
 
@@ -38,11 +38,11 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+Open [https://asset-price-drop.vercel.app/](DEMO LINK) to view the application.
 
 ## Email Notifications
 
-The application uses a custom **Black & Gold** email template for price drop alerts, ensuring a premium experience even in your inbox.
+The application uses a custom, modern email template for price drop alerts, ensuring a premium experience even in your inbox.
 
 ![Email Template Preview](public/alert_mail_template.png)
 
