@@ -48,8 +48,8 @@ export default function AddProductForm({ user }) {
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="Paste product URL (Amazon, Walmart, etc.)"
-            className="h-12 text-base"
+            placeholder="Paste asset URL (Amazon, Walmart, etc.)"
+            className="h-12 text-base bg-card border-border focus:border-primary"
             required
             disabled={loading}
             suppressHydrationWarning
@@ -58,7 +58,7 @@ export default function AddProductForm({ user }) {
           <Button
             type="submit"
             disabled={loading}
-            className="bg-orange-500 hover:bg-orange-600 h-10 sm:h-12 px-8"
+            className="h-10 sm:h-12 px-8 font-semibold"
             size="lg"
             suppressHydrationWarning
           >
@@ -68,7 +68,7 @@ export default function AddProductForm({ user }) {
                 Adding...
               </>
             ) : (
-              "Track Price"
+              "Track Asset"
             )}
           </Button>
         </div>

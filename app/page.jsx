@@ -19,34 +19,34 @@ export default async function Home() {
   const FEATURES = [
     {
       icon: Rabbit,
-      title: "Lightning Fast",
+      title: "Speed of Light",
       description:
-        "Deal Drop extracts prices in seconds, handling JavaScript and dynamic content",
+        "Deal Drop parses prices instantly, mastering even the most complex dynamic sites.",
     },
     {
       icon: Shield,
-      title: "Always Reliable",
+      title: "Unwavering Reliability",
       description:
-        "Works across all major e-commerce sites with built-in anti-bot protection",
+        "Engineered for all major retailers with advanced anti-bot resilience built-in.",
     },
     {
       icon: Bell,
-      title: "Smart Alerts",
-      description: "Get notified instantly when prices drop below your target",
+      title: "Precision Alerts",
+      description: "Receive immediate intelligence when targets hit your price point.",
     },
   ];
 
   return (
-    <main className="min-h-screen bg-linear-to-br from-orange-50 via-white to-orange-50">
-      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10">
+    <main className="min-h-screen bg-background text-foreground">
+      <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image
-              src="/deal-drop-logo.png"
+              src="/price-drop-logo.png"
               alt="Deal Drop Logo"
-              width={600}
-              height={200}
-              className="h-10 w-auto"
+              width={1400}
+              height={600}
+              className="h-14 w-auto object-contain"
             />
           </div>
 
@@ -57,33 +57,30 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-6 py-2 rounded-full text-sm font-medium mb-6">
-            Made with ❤️ by Vo Tan
-          </div>
-
-          <h2 className="text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-            Never Miss a Price Drop
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-primary">
+            Command the Market. <br className="hidden md:block" />
+            <span className="text-foreground">Capture the Value.</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Track prices from any e-commerce site. Get instant alerts when
-            prices drop. Save money effortlessly.
+          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            The definitive tool for the strategic shopper. Zero latency. Maximum savings.
+            Elevate your purchasing power with real-time data.
           </p>
 
           <AddProductForm user={user} />
 
           {/* Features */}
           {products.length === 0 && (
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto my-16">
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto my-20">
               {FEATURES.map(({ icon: Icon, title, description }) => (
                 <div
                   key={title}
-                  className="bg-white p-6 rounded-xl border border-gray-200"
+                  className="bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-colors duration-300 shadow-sm hover:shadow-md"
                 >
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                    <Icon className="w-6 h-6 text-orange-500" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
-                  <p className="text-sm text-gray-600">{description}</p>
+                  <h3 className="font-semibold text-foreground mb-2 text-lg">{title}</h3>
+                  <p className="text-sm text-muted-foreground">{description}</p>
                 </div>
               ))}
             </div>
@@ -92,16 +89,16 @@ export default async function Home() {
           {/* Products Grid */}
           {user && products.length > 0 && (
             <section className="max-w-7xl mx-auto px-4 pb-20">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  Your Tracked Products
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-2xl font-bold text-foreground">
+                  Your Watchlist
                 </h3>
-                <span className="text-sm text-gray-500">
-                  {products.length} {products.length === 1 ? "product" : "products"}
+                <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full border border-border">
+                  {products.length} {products.length === 1 ? "Asset" : "Assets"}
                 </span>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-2 items-start">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start">
                 {products.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -112,13 +109,13 @@ export default async function Home() {
           {/* No Products Yet */}
           {user && products.length === 0 && (
             <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
-              <div className="bg-white rounded-xl border-2 border-dashed border-gray-300 p-12">
-                <TrendingDown className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  No products yet
+              <div className="bg-card rounded-xl border-2 border-dashed border-border p-12 hover:border-primary/50 transition-colors">
+                <TrendingDown className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  No assets tracked
                 </h3>
-                <p className="text-gray-600">
-                  Add your first product above to start tracking prices!
+                <p className="text-muted-foreground">
+                  Initialize tracking by adding your first product URL above.
                 </p>
               </div>
             </section>

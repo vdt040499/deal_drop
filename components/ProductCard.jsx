@@ -45,15 +45,15 @@ export default function ProductCard({ product }) {
           )}
 
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-gray-900 line-clamp-2 mb-2">
+            <h3 className="font-semibold text-foreground line-clamp-2 mb-2">
               {product.name}
             </h3>
 
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-orange-500">
+              <span className="text-xl font-bold text-primary">
                 {product.currency} {product.current_price}
               </span>
-              <Badge variant="secondary" className="gap-1">
+              <Badge variant="secondary" className="gap-1 text-xs">
                 <TrendingDown className="w-3 h-3" />
                 Tracking
               </Badge>
@@ -63,42 +63,36 @@ export default function ProductCard({ product }) {
       </CardHeader>
 
       <CardContent>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex items-center justify-end gap-2">
           <Button
-            variant="outline"
-            size="sm"
+            variant="ghost"
+            size="icon"
             onClick={() => setShowChart(!showChart)}
-            className="gap-1"
+            className="hover:text-primary hover:bg-primary/10"
+            title={showChart ? "Hide Chart" : "Show Chart"}
           >
             {showChart ? (
-              <>
-                <ChevronUp className="w-4 h-4" />
-                Hide Chart
-              </>
+              <ChevronUp className="w-5 h-5" />
             ) : (
-              <>
-                <ChevronDown className="w-4 h-4" />
-                Show Chart
-              </>
+              <ChevronDown className="w-5 h-5" />
             )}
           </Button>
 
-          <Button variant="outline" size="sm" asChild className="gap-1">
+          <Button variant="ghost" size="icon" asChild className="hover:text-primary hover:bg-primary/10" title="View Product">
             <Link href={product.url} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-4 h-4" />
-              View Product
+              <ExternalLink className="w-5 h-5" />
             </Link>
           </Button>
 
           <Button
             variant="ghost"
-            size="sm"
+            size="icon"
             onClick={handleDelete}
             disabled={deleting}
-            className="text-red-600 hover:text-red-700 hover:bg-red-50 gap-1"
+            className="text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+            title="Remove Product"
           >
-            <Trash2 className="w-4 h-4" />
-            Remove
+            <Trash2 className="w-5 h-5" />
           </Button>
         </div>
       </CardContent>
