@@ -2,7 +2,9 @@
 
 **Price Drop** is a premium, high-performance price tracking application designed for the strategic shopper. It monitors product prices across major e-commerce platforms in real-time and delivers instant email alerts when prices drop, ensuring you never miss a deal ("asset") again.
 
-![Price Drop Alert Email Template](public/price-drop-logo.png)
+<div align="center">
+  <img src="public/price-drop-logo.png" alt="Price Drop Logo" width="300" />
+</div>
 
 ## Core Features
 
@@ -38,7 +40,7 @@ npm run dev
 yarn dev
 ```
 
-Open [https://asset-price-drop.vercel.app/](DEMO LINK) to view the application.
+Open [THIS DEMO](https://asset-price-drop.vercel.app) to experience the application.
 
 ## Email Notifications
 
